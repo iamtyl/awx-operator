@@ -1,10 +1,21 @@
-# AWX Operator
+# [Construction in progress] AWX Operator Offline Deployment Guide
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Build Status](https://github.com/ansible/awx-operator/workflows/CI/badge.svg?event=push)](https://github.com/ansible/awx-operator/actions)
-[![Code of Conduct](https://img.shields.io/badge/code%20of%20conduct-Ansible-yellow.svg)](https://docs.ansible.com/ansible/latest/community/code_of_conduct.html)
+*This project was forked from the original awx-operator.*
 
-An [Ansible AWX](https://github.com/ansible/awx) operator for Kubernetes built with [Operator SDK](https://github.com/operator-framework/operator-sdk) and Ansible.
+projects_storage_class: local-path-01
+On worker1.local
+sudo mkdir -p /opt/local-path-provisioner
+sudo chmod 777 /opt/local-path-provisioner
+sudo mkdir -p /opt/local-path-provisioner/pv-awx --> pv-create.yaml will store data in this path directory
+sudo chmod 777 /opt/local-path-provisioner/pv-awx
+
+DEFAULT_PATH_FOR_NON_LISTED_NODES --> worker1.local
+
+
+Manually provision storageclass for VMware.
+
+
+
 
 The AWX Operator is meant to be deployed in your Kubernetes cluster(s) and can be used to install and manage the lifecycle of an AWX instance in the same namespace.
 
